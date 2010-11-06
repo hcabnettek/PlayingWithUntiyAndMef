@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="UnitySilverlightApp.PreferencesControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+   >
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" /> 
+            <ColumnDefinition Width="*" />
+                        
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Text="What is your preference?" />
+        <ComboBox Grid.Column="1" ItemsSource="{Binding ShapePreferences}"
+                  SelectedItem="{Binding CurrentPreference, Mode=TwoWay}" />
+    </Grid>
+</UserControl>

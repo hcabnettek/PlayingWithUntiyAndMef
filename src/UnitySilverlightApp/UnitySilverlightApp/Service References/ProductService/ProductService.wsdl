@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://kettenba.ch" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="ProductService" targetNamespace="http://kettenba.ch" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://kettenba.ch/Imports">
+      <xsd:import schemaLocation="http://stonecold/UnityServiceApp/ProductService.svc?xsd=xsd0" namespace="http://kettenba.ch" />
+      <xsd:import schemaLocation="http://stonecold/UnityServiceApp/ProductService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://stonecold/UnityServiceApp/ProductService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UnityBO.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProductService_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductsBySubcategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsBySubcategory" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductsBySubcategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsBySubcategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategories" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetSubcategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubcategories" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetSubcategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubcategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetSubcategoriesByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubcategoriesByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetSubcategoriesByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubcategoriesByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IProductService">
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://kettenba.ch/IProductService/GetProducts" message="tns:IProductService_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://kettenba.ch/IProductService/GetProductsResponse" message="tns:IProductService_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <wsdl:input wsaw:Action="http://kettenba.ch/IProductService/GetProduct" message="tns:IProductService_GetProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://kettenba.ch/IProductService/GetProductResponse" message="tns:IProductService_GetProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsBySubcategory">
+      <wsdl:input wsaw:Action="http://kettenba.ch/IProductService/GetProductsBySubcategory" message="tns:IProductService_GetProductsBySubcategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://kettenba.ch/IProductService/GetProductsBySubcategoryResponse" message="tns:IProductService_GetProductsBySubcategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <wsdl:input wsaw:Action="http://kettenba.ch/IProductService/GetCategories" message="tns:IProductService_GetCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://kettenba.ch/IProductService/GetCategoriesResponse" message="tns:IProductService_GetCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubcategories">
+      <wsdl:input wsaw:Action="http://kettenba.ch/IProductService/GetSubcategories" message="tns:IProductService_GetSubcategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://kettenba.ch/IProductService/GetSubcategoriesResponse" message="tns:IProductService_GetSubcategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubcategoriesByCategory">
+      <wsdl:input wsaw:Action="http://kettenba.ch/IProductService/GetSubcategoriesByCategory" message="tns:IProductService_GetSubcategoriesByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://kettenba.ch/IProductService/GetSubcategoriesByCategoryResponse" message="tns:IProductService_GetSubcategoriesByCategory_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SilverlightBinding" type="tns:IProductService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://kettenba.ch/IProductService/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <soap:operation soapAction="http://kettenba.ch/IProductService/GetProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsBySubcategory">
+      <soap:operation soapAction="http://kettenba.ch/IProductService/GetProductsBySubcategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <soap:operation soapAction="http://kettenba.ch/IProductService/GetCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubcategories">
+      <soap:operation soapAction="http://kettenba.ch/IProductService/GetSubcategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubcategoriesByCategory">
+      <soap:operation soapAction="http://kettenba.ch/IProductService/GetSubcategoriesByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductService">
+    <wsdl:port name="SilverlightBinding" binding="tns:SilverlightBinding">
+      <soap:address location="http://stonecold/UnityServiceApp/ProductService.svc/sl" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

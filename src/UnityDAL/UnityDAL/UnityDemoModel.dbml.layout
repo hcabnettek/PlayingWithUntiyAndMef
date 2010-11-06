@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.125, 9.25" name="UnityDemoModel">
+  <DataContextMoniker Name="/UnityDemoModelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="12064c16-477f-413f-a185-e47cb242b3c8" absoluteBounds="4.375, 3.375, 2, 5.6169254557291657">
+      <DataClassMoniker Name="/UnityDemoModelDataContext/Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49b2689d-9dad-4b9c-b72c-c2d226ee4757" absoluteBounds="4.39, 3.835, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df3c181e-4a7c-4abd-8d0b-9fb747b9e87f" absoluteBounds="9.875, 2.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/UnityDemoModelDataContext/ProductCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7abff8af-35ff-41e8-ab2d-4a094ef63967" absoluteBounds="9.89, 2.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fc702fd4-2ef4-4eec-a0c1-6bc8c7b134c4" absoluteBounds="1.375, 3.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/UnityDemoModelDataContext/ProductSubcategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f170f10d-8426-4f7d-a333-60366ed3b7d7" absoluteBounds="1.3900000000000001, 4.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.375 : 4.76044840494792); (4.375 : 4.76044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UnityDemoModelDataContext/ProductSubcategory/ProductSubcategory_Product" />
+      <nodes>
+        <classShapeMoniker Id="fc702fd4-2ef4-4eec-a0c1-6bc8c7b134c4" />
+        <classShapeMoniker Id="12064c16-477f-413f-a185-e47cb242b3c8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.875 : 2.84375); (2.375 : 2.84375); (2.375 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UnityDemoModelDataContext/ProductCategory/ProductCategory_ProductSubcategory" />
+      <nodes>
+        <classShapeMoniker Id="df3c181e-4a7c-4abd-8d0b-9fb747b9e87f" />
+        <classShapeMoniker Id="fc702fd4-2ef4-4eec-a0c1-6bc8c7b134c4" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
